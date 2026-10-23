@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Load Feature Validation - MyKeepSafe Ledger Test Data</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; background: #f5f5f5; }
+    h1 { color: #2d6a4f; }
+    .container { max-width: 600px; margin: 0 auto; }
+    .status { padding: 1rem; border-radius: 8px; margin: 1rem 0; }
+    .loading { background: #e3f2fd; border-left: 4px solid #1976d2; }
+    .success { background: #e8f5e9; border-left: 4px solid #388e3c; }
+    .error { background: #ffebee; border-left: 4px solid #d32f2f; }
+    a { color: #2d6a4f; text-decoration: none; font-weight: bold; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧪 Feature Validation Data Loader</h1>
+    <div id="status" class="status loading">
+      <p>Loading feature validation test data...</p>
+    </div>
+  </div>
+
+  <script>
+    const statusDiv = document.getElementById('status');
+
+    fetch('tests/fixtures/feature-validation-data.json')
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then(data => {
+        localStorage.setItem('myledger_data', JSON.stringify(data));
+        localStorage.setItem('myledger_onboarded', '1');
+        statusDiv.className = 'status success';
+        statusDiv.innerHTML = `
+          <p><strong>✓ Success!</strong> Feature validation data loaded.</p>
+          <p>Months: ${data.order.join(', ')}</p>
+          <p>Fixed Expenses: ${data.fixedExpenses.length}</p>
+          <p>Liabilities with rates: ${data.liabilities.filter(l => l.interestRate > 0).length}</p>
+          <p style="margin-top: 1rem;"><a href="index.html">→ Open App</a></p>
+        `;
+      })
+      .catch(err => {
+        statusDiv.className = 'status error';
+        statusDiv.innerHTML = `<p><strong>✗ Error:</strong> ${err.message}</p>`;
+      });
+  </script>
+</body>
+</html>

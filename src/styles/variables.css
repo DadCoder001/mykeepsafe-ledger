@@ -1,0 +1,54 @@
+:root {
+  /* Text */
+  --ink:       #1a1a2e;
+  --ink2:      #4a4a6a;
+  --ink3:      #8888aa;
+
+  /* Surfaces */
+  --paper:     #fafaf8;
+  --paper2:    #f0f0ec;
+  --paper3:    #e8e8e2;
+
+  /* Brand */
+  --accent:    #2d6a4f;
+  --accent2:   #40916c;
+  --accent3:   #d4edda;
+
+  /* Semantic */
+  --red:       #c0392b;
+  --red-bg:    #fdecea;
+  --gold:      #b5830a;
+  --gold-bg:   #fef3cd;
+  --blue:      #1d4ed8;
+  --blue-bg:   #eff6ff;
+
+  /* Structure */
+  --border:    rgba(0,0,0,0.08);
+  --card:      #ffffff;
+  --shadow:    0 1px 4px rgba(0,0,0,0.07);
+  --radius:    10px;
+  --sidebar-w: 260px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink:      #e8e8f0;
+    --ink2:     #a8a8c0;
+    --ink3:     #666688;
+    --paper:    #0f0f1a;
+    --paper2:   #1a1a2a;
+    --paper3:   #222232;
+    --accent:   #52b788;
+    --accent2:  #74c69d;
+    --accent3:  #1a3a2a;
+    --red:      #e57373;
+    --red-bg:   #2a1a1a;
+    --gold:     #f4c542;
+    --gold-bg:  #2a2010;
+    --blue:     #60a5fa;
+    --blue-bg:  #1e2a40;
+    --border:   rgba(255,255,255,0.08);
+    --card:     #1a1a2a;
+    --shadow:   0 1px 4px rgba(0,0,0,0.3);
+  }
+}

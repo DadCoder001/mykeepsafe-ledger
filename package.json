@@ -1,0 +1,55 @@
+{
+  "name": "mykeepsafe-ledger",
+  "version": "1.0.0",
+  "description": "Be your own CFO. A local-only, open-source personal finance app with a private AI assistant that runs on your own computer. Your financial data never leaves your machine.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "vite build && node server/index.mjs",
+    "serve": "node server/index.mjs",
+    "test": "playwright test --reporter=line",
+    "audit:exports": "node scripts/audit-window-exports.mjs",
+    "desktop:dev": "powershell -ExecutionPolicy Bypass -File scripts/run-tauri-with-vsenv.ps1 dev",
+    "desktop:build": "powershell -ExecutionPolicy Bypass -File scripts/run-tauri-with-vsenv.ps1 build",
+    "desktop:sync-version": "node scripts/sync-desktop-version.mjs",
+    "desktop:dev:unix": "tauri dev",
+    "desktop:build:unix": "tauri build",
+    "check:release": "node scripts/check-release.mjs",
+    "eval:models": "node scripts/eval-models.mjs"
+  },
+  "keywords": [
+    "personal-finance",
+    "budget",
+    "local-first",
+    "privacy",
+    "offline",
+    "ollama",
+    "local-llm",
+    "self-hosted"
+  ],
+  "author": "DadCoder001",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@tauri-apps/cli": "^2.11.2",
+    "@vitejs/plugin-react": "^6.0.2",
+    "vite": "^8.0.16"
+  },
+  "dependencies": {
+    "@fontsource/dm-mono": "^5.3.0",
+    "@fontsource/dm-sans": "^5.3.0",
+    "@fontsource/playfair-display": "^5.3.0",
+    "chart.js": "^4.5.1",
+    "chartjs-chart-sankey": "^0.15.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DadCoder001/mykeepsafe-ledger.git"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

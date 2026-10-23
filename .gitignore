@@ -1,0 +1,59 @@
+# Dependencies
+node_modules/
+
+# Your financial data (npm start saves here) — never commit it
+data/
+
+# Test outputs
+test-results/
+test-results.json
+playwright-report/
+
+# Demo recording specs (private tooling)
+tests/demo-recording.spec.js
+tests/demo-animation.spec.js
+
+# Internal dev docs
+MYLEDGER_SKILL.md
+
+# Legacy archive
+archive/
+
+# Desktop build artifacts
+src-tauri/target/
+desktop-dist/
+dist/
+
+# Local Claude Code settings (personal, not shared)
+.claude/settings.local.json
+
+# Private working notes (never part of the open-source repo)
+production-readiness/
+
+# Signing and release secrets
+*.pfx
+*.p12
+*.mobileprovision
+*.cer
+*.key
+.env
+.env.*
+
+# Temp / scratch files
+.self-test-stderr.tmp
+.self-test-stdout.tmp
+test-run-output.txt
+*-results.json
+generate-voiceover.js
+
+# Large demo media (tracked in LFS or separately)
+demo/voiceover.mp3
+demo/myledger-demo.mp4
+demo/mixed-audio.mp3
+demo/music.mp3
+demo/tts-temp/
+
+# Local tool folders and the desktop updater signing keys
+.venv/
+.wrangler/
+src-tauri/keys/

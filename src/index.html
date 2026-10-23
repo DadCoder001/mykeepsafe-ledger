@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- Local-only: the app may talk to itself and to model servers on this computer, nothing else. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; media-src 'self' blob:; connect-src 'self' http://localhost:* http://127.0.0.1:* ws://localhost:* ipc: http://ipc.localhost; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <title>MyKeepSafe Ledger — Be your own CFO</title>
+</head>
+<body>
+  <div id="root" style="display:contents"></div>
+  <script src="/legacy/app.js"></script>
+  <script type="module" src="/main.jsx"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+{
+  "months": {
+    "2026-04": {
+      "incomes": [
+        { "amount": 4000, "desc": "Seed Income April", "date": "2026-04-01T09:00:00.000Z", "tags": [] }
+      ],
+      "expenses": [
+        { "amount": 200, "desc": "Seed Groceries", "cat": "Groceries", "date": "2026-04-05T10:00:00.000Z", "tags": [] }
+      ],
+      "transfers": [],
+      "budget": 3500,
+      "balance": 3800,
+      "savingsGoal": 0,
+      "fixedExpenseIds": []
+    },
+    "2026-05": {
+      "incomes": [],
+      "expenses": [],
+      "transfers": [],
+      "budget": 0,
+      "balance": 0,
+      "savingsGoal": 0,
+      "fixedExpenseIds": []
+    }
+  },
+  "order": ["2026-04", "2026-05"],
+  "categories": [
+    "Rent", "Utilities", "Groceries", "Dining Out", "Transportation",
+    "Healthcare", "Subscriptions", "Personal Care", "Other"
+  ],
+  "fixedExpenses": [],
+  "knownTags": [],
+  "assets": [],
+  "liabilities": [],
+  "accounts": [],
+  "goals": [],
+  "netWorthSnapshots": [],
+  "notifications": [],
+  "settings": {
+    "lowSavings": 10,
+    "expenseSpikePct": 10,
+    "largeTxPct": 20,
+    "aiEnabled": false,
+    "aiProvider": "webllm",
+    "aiModel": "Phi-3.5-mini-instruct-q4f16_1-MLC",
+    "providerKeys": {},
+    "lastBackup": null,
+    "budgetCarryForward": false,
+    "defaultSavingsGoal": 0,
+    "userName": "Core Test User",
+    "autoCheckUpdates": false,
+    "lastUpdateCheck": null,
+    "dismissedSubscriptions": [],
+    "householdMembers": []
+  }
+}
