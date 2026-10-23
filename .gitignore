@@ -5,6 +5,7 @@ node_modules/
 data/
 
 # Test outputs
+*.sarif
 test-results/
 test-results.json
 playwright-report/
