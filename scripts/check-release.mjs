@@ -28,7 +28,10 @@ const fail = (step, msg) => problems.push(`[${step}] ${msg}`)
 function publishedFiles() {
   const listed = execSync('git ls-files -co --exclude-standard', { cwd: ROOT, encoding: 'utf8' })
     .split('\n').filter(Boolean).filter(f => fs.existsSync(path.join(ROOT, f)))
-  const patterns = fs.readFileSync(path.join(ROOT, '.gitattributes'), 'utf8').split('\n')
+  // The public repo has no .gitattributes (it is itself export-ignored): nothing to exclude.
+  const attrFile = path.join(ROOT, '.gitattributes')
+  const attrs = fs.existsSync(attrFile) ? fs.readFileSync(attrFile, 'utf8') : ''
+  const patterns = attrs.split('\n')
     .map(l => l.trim()).filter(l => l && !l.startsWith('#') && /\bexport-ignore\b/.test(l)).map(l => l.split(/\s+/)[0])
   const ignored = f => patterns.some(p => (p.endsWith('/') ? f.startsWith(p) : f === p))
   return listed.filter(f => !ignored(f))
